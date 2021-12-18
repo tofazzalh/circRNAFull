@@ -1,3 +1,7 @@
+<!-- badges: start -->
+  [![Travis build status](https://travis-ci.com/tofazzalh/circRNAFull.svg?branch=main)](https://travis-ci.com/tofazzalh/circRNAFull)
+  <!-- badges: end -->
+  
 # circRNAFull: an R package for reconstruction of full length circRNA sequence using chimeric alignment information
 
 ## Requirements
