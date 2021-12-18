@@ -1,0 +1,70 @@
+jf<-read.table("F:/222222222222222222/FcircSEC_RNASeq/CIRCexplorer2_output/SRR10612068Chimeric.out.junction")
+head(jf)
+dim(jf)
+jf_chr21<-jf[which(jf$V1=="chr21" & jf$V4=="chr21"),]
+dim(jf_chr21)
+head(jf_chr21)
+write.table(jf_chr21,"F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/Chimeric.out.junction", row.names=F, col.names=F, quote=F, sep="\t" )
+Chimeric.out.junction<-jf_chr21
+usethis::use_data(Chimeric.out.junction)
+
+CIRCexplorer_output<-read.table("F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/CIRCexplorer_output.txt")
+head(CIRCexplorer_output)
+dim(CIRCexplorer_output)
+usethis::use_data(CIRCexplorer_output)
+summary(CIRCexplorer_output$V3)
+library(Biostrings)
+ref_genome<-"F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/chr21.fa"
+fastaFile <- readDNAStringSet(ref_genome) # reading reference genome
+seq_name = sub('\\ .*', '', names(fastaFile))
+sequence = paste(fastaFile)
+sequence<-substr(sequence, 19900001, 20000000)
+chr21<-data.frame(seq_name, sequence)
+usethis::use_data(chr21)
+#save(chr21, file='chr21.rda', compress='xz')
+nchar(sequence)
+seq<-substr(sequence, 19900001, 20000000)
+str(sequence)
+substr(seq, 19999999,20000000)
+nchar(seq)
+
+exon_count_after_skipping_exon<-read.table("F:/222222222222222222/FcircSEC_RNASeq/CIRCexplorer2_output/extract_full_seq/exon_count_after_skipping_exon.txt", header=T)
+head(exon_count_after_skipping_exon)
+exon_count_after_skipping_exon<-exon_count_after_skipping_exon[which(exon_count_after_skipping_exon$V4=="chr21"),]
+dim(exon_count_after_skipping_exon)
+usethis::use_data(exon_count_after_skipping_exon)
+
+circle_ID<-read.table("F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/circle_ids.txt")
+head(circle_ID)
+usethis::use_data(circle_ID)
+
+exon_coordinate<-read.table("F:/222222222222222222/FcircSEC_RNASeq/CIRCexplorer2_output/extract_full_seq/exon_coordinate_f.txt")
+dim(exon_coordinate)
+head(exon_coordinate)
+exon_coordinate<-exon_coordinate[which(exon_coordinate$V1=="chr21"),]
+usethis::use_data(exon_coordinate)
+
+bam<-"F:/222222222222222222/FcircSEC_RNASeq/CIRCexplorer2_output/SRR10612068Chimeric.out.bam"
+bamfile<-read_bam_as_dataframe(bam)
+circle_ids<-"F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/circle_ids.txt"
+outfolder<-"F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/circle_reads"
+circle_id<-read.table(circle_ids)
+extract_reads_from_bam(circle_id, bamfile, outfolder)
+
+
+bed_file<-read.table("F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/exon_coordinate.txt")
+head(bed_file)
+circle_ids<-read.table("F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/circle_ids.txt")
+head(circle_ids)
+folder_name<-"F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/circle_reads"
+output_folder<-"F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full"
+
+Extract_exon(bed_file, folder_name, circle_ids, output_folder)
+
+exon_count<-read.table("F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/exon_count.txt")
+usethis::use_data(exon_count)
+
+skip_exon<-read.table("F:/222222222222222222/FcircSEC_RNASeq/Example_data_circRNA-full/A/detect_skip_exon.txt", header=T)
+head(skip_exon)
+dim(skip_exon)
+usethis::use_data(skip_exon)

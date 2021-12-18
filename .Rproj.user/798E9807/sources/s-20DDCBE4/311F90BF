@@ -1,0 +1,28 @@
+{
+    "id": "311F90BF",
+    "path": "~/circRNAFull/man/extract_circle_ids.Rd",
+    "project_path": "man/extract_circle_ids.Rd",
+    "type": "r_doc",
+    "hash": "2148222081",
+    "contents": "",
+    "dirty": false,
+    "created": 1639323641396.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "6,25",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1639756177,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1639756177,
+    "read_only": true,
+    "read_only_alternatives": [
+        "R/circRNAFull.R"
+    ]
+}
