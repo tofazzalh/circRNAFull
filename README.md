@@ -1,3 +1,7 @@
+<!-- badges: start -->
+  [![R-CMD-check](https://github.com/tofazzalh/circRNAFull/workflows/R-CMD-check/badge.svg)](https://github.com/tofazzalh/circRNAFull/actions)
+<!-- badges: end -->
+
 # circRNAFull: an R package for reconstruction of full length circRNA sequence using chimeric alignment information
 
 ## Requirements
