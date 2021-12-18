@@ -31,7 +31,7 @@ The package "circRNAFull" depends on two bioconductor packages "Biostrings" and 
 
 Finally, install “circRNAFull” by the following command:
 
-    devtools::install_github("tofazzal4720/circRNAFull", dep = T)
+    devtools::install_github("tofazzalh/circRNAFull", dep = T)
 
 Start analysis by loading the package with the following command:
 
