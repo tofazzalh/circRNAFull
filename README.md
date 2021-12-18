@@ -5,7 +5,7 @@
 # circRNAFull: an R package for reconstruction of full length circRNA sequence using chimeric alignment information
 
 ## Requirements
-* R (>= 4.1.2)
+* R (>= 3.0.0)
 * Biostrings
 * seqinr
 * stringi
