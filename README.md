@@ -12,10 +12,6 @@
 * Rsamtools
 
 ## Installation
-### From cran
-To install the package from cran, run the command:
-
-    install.packages("circRNAFull", dep=T)
 	
 ### From github
 To install the package from github first you need to install the package “devtools” using the following command:
@@ -79,7 +75,7 @@ The circle ids, transcript name and the spanning reads will be produced in '*out
 This function generates individual alignment file for each circRNA from the chimeric alignment produced by STAR.
 
 #### Usage
-    extract_reads_from_bam<-function(circle_id, bamfile, outfolder)
+    extract_reads_from_bam(circle_id, bamfile, outfolder)
 
 #### Arguments
 `circle_id` is a data frame containg circle ids, transcript name and spanning reads of circRNAs obtained from function
@@ -108,7 +104,7 @@ Individual alignment files for each circRNAs will be produced in *outfolder*.
     
     #Extracting individual alignment file for each circRNAs. 
     #The individual alignment file will be generated in the 'outfolder' directory.
-    extract_reads_from_bam<-function(circle_id, bamfile, outfolder)
+    extract_reads_from_bam(circle_id, bamfile, outfolder)
  
  ## Extracting exon for the circRNAs
  
