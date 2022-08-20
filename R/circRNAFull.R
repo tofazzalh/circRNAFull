@@ -96,7 +96,7 @@ extract_circle_ids<-function(circ_out, chimeric_out, output){
 #' \dontrun{
 #' #Extracting individual alignment file for each circRNAs. The individual alignment file
 #' #will be generated in the 'outfolder' directory.
-#' extract_reads_from_bam<-function(circle_id, bamfile, outfolder)
+#' extract_reads_from_bam(circle_id, bamfile, outfolder)
 #' }
 #' }
 
